@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const backendUrl = "https://qtntktogobtletqbvjqy.nhost.run";
+
 const primaryColor = Color(0xFF185B9D);
 const primaryLightColor = Color.fromARGB(255, 55, 99, 221);
 const accentColor = Color(0xFF43CEA2);

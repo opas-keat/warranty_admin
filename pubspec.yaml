@@ -12,6 +12,13 @@ dependencies:
   intl: ^0.18.1
   dio: ^5.3.3
   get: 4.6.6
+  talker_flutter: ^3.5.4
+  data_table_2: ^2.5.8
+  image_picker: ^1.0.4
+  fl_chart: ^0.64.0
+  connectivity_plus: ^5.0.0
+  qr_flutter: ^4.1.0
+  printing: ^5.11.1
   flutter:
     sdk: flutter
   flutter_localizations:
