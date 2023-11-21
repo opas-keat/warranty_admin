@@ -4,7 +4,6 @@ class Api {
   static const int receiveTimeout = 15000;
   // connectTimeout
   static const int connectionTimeout = 15000;
-  // static const baseUrl = "https://pp-salesite.com";
   // static const baseUrl = "http://127.0.0.1:9999";
   static const baseUrl = "https://warranty-ppadmin.ppsuperwheels.com";
   static const baseUrlQr = "https://warranty.ppsuperwheels.com/#";

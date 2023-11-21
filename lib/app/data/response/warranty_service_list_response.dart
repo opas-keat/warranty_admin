@@ -158,15 +158,15 @@ class ProductList {
     productMileExpire = json['product_mile_expire'];
     productPromotionExpire = json['product_promotion_expire'];
     warrantyNo = json['warranty_no'];
-    promotion = json[':promotion'];
-    promotionDay = json[':promotion_day'];
-    promotionMile = json[':promotion_mile'];
-    warrantyWheelYear = json[':warranty_wheel_year'];
-    warrantyWheelColor = json[':warranty_wheel_color'];
-    warrantyTireYear = json[':warranty_tire_year'];
-    warrantyTireMile = json[':warranty_tire_mile'];
-    warrantyTireYearZestino = json[':warranty_tire_year_zestino'];
-    warrantyTireMileZestino = json[':warranty_tire_mile_zestino'];
+    promotion = json['promotion'];
+    promotionDay = json['promotion_day'];
+    promotionMile = json['promotion_mile'];
+    warrantyWheelYear = json['warranty_wheel_year'];
+    warrantyWheelColor = json['warranty_wheel_color'];
+    warrantyTireYear = json['warranty_tire_year'];
+    warrantyTireMile = json['warranty_tire_mile'];
+    warrantyTireYearZestino = json['warranty_tire_year_zestino'];
+    warrantyTireMileZestino = json['warranty_tire_mile_zestino'];
   }
 
   Map<String, dynamic> toJson() {
@@ -181,15 +181,15 @@ class ProductList {
     data['product_mile_expire'] = productMileExpire;
     data['product_promotion_expire'] = productPromotionExpire;
     data['warranty_no'] = warrantyNo;
-    data[':promotion'] = promotion;
-    data[':promotion_day'] = promotionDay;
-    data[':promotion_mile'] = promotionMile;
-    data[':warranty_wheel_year'] = warrantyWheelYear;
-    data[':warranty_wheel_color'] = warrantyWheelColor;
-    data[':warranty_tire_year'] = warrantyTireYear;
-    data[':warranty_tire_mile'] = warrantyTireMile;
-    data[':warranty_tire_year_zestino'] = warrantyTireYearZestino;
-    data[':warranty_tire_mile_zestino'] = warrantyTireMileZestino;
+    data['promotion'] = promotion;
+    data['promotion_day'] = promotionDay;
+    data['promotion_mile'] = promotionMile;
+    data['warranty_wheel_year'] = warrantyWheelYear;
+    data['warranty_wheel_color'] = warrantyWheelColor;
+    data['warranty_tire_year'] = warrantyTireYear;
+    data['warranty_tire_mile'] = warrantyTireMile;
+    data['warranty_tire_year_zestino'] = warrantyTireYearZestino;
+    data['warranty_tire_mile_zestino'] = warrantyTireMileZestino;
     return data;
   }
 }

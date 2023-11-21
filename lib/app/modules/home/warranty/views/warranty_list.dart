@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../api/api.dart';
 import '../../../../api/api_end_points.dart';
-import '../../../../data/response/warranty_customer_service_response.dart';
+import '../../../../data/response/customer_service_response.dart';
 import '../../../../data/response/warranty_service_list_response.dart';
 import '../../../../shared/constant.dart';
 import '../../../../shared/custom_text.dart';
@@ -656,7 +656,7 @@ List<DataColumn> listColumn = [
 
 DataRow setDataRow(
   int index,
-  WarrantyCustomerData warrantyCustomerData,
+  CustomerData customerData,
   WarrantyController controller,
 ) {
   return DataRow.byIndex(
@@ -668,7 +668,7 @@ DataRow setDataRow(
         ),
         barrierDismissible: false,
       );
-      await controller.selectDataFromTable(index, warrantyCustomerData);
+      await controller.selectDataFromTable(index, customerData);
       Get.back();
     },
     cells: [
@@ -678,28 +678,28 @@ DataRow setDataRow(
       DataCell(
         Wrap(
           children: [
-            CustomText(text: warrantyCustomerData.telephone!),
+            CustomText(text: customerData.customerPhone!),
           ],
         ),
       ),
       DataCell(
         Wrap(
           children: [
-            CustomText(text: warrantyCustomerData.fullName!),
+            CustomText(text: customerData.customerName!),
           ],
         ),
       ),
       DataCell(
         Wrap(
           children: [
-            CustomText(text: warrantyCustomerData.licensePlate!),
+            CustomText(text: customerData.customerLicensePlate!),
           ],
         ),
       ),
       DataCell(
         Wrap(
           children: [
-            CustomText(text: warrantyCustomerData.email!),
+            CustomText(text: customerData.customerEmail!),
           ],
         ),
       ),
@@ -871,7 +871,7 @@ class WarrantySearchWidget extends StatelessWidget {
             ),
             const SizedBox(width: defaultPadding / 2),
             const CustomText(
-              text: "ชื่อ-นามสกุล",
+              text: "Email",
               weight: FontWeight.bold,
               size: 18,
             ),

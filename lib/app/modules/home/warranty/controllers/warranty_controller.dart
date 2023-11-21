@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../api/api_params.dart';
 import '../../../../api/services/warranty_service.dart';
+import '../../../../data/response/customer_service_response.dart';
 import '../../../../data/response/warranty_customer_service_response.dart';
 import '../../../../data/response/warranty_service_list_response.dart';
 import '../../../../shared/utils.dart';
@@ -11,7 +12,7 @@ class WarrantyController extends GetxController {
   final logTitle = "WarrantyController";
   RxBool isLoading = true.obs;
 
-  final customerList = <WarrantyCustomerData>[].obs;
+  final customerList = <CustomerData>[].obs;
 
   final offset = 0.obs;
   final limit = 50.obs;
@@ -59,12 +60,13 @@ class WarrantyController extends GetxController {
         for (final item in response.data!) {
           // talker.info('$logTitle:warrantyNo:${item.warrantyNo}');
           customerList.add(
-            WarrantyCustomerData(
+            CustomerData(
               id: item.id,
-              email: item.customerEmail,
-              fullName: item.customerName,
-              licensePlate: item.customerLicensePlate,
-              telephone: item.customerPhone,
+              customerEmail: item.customerEmail,
+              customerName: item.customerName,
+              customerLicensePlate: item.customerLicensePlate,
+              customerPhone: item.customerPhone,
+              warrantyNo: item.warrantyNo,
             ),
           );
         }
@@ -83,7 +85,7 @@ class WarrantyController extends GetxController {
     // isLoading.refresh();
   }
 
-  selectDataFromTable(int index, WarrantyCustomerData customer) async {
+  selectDataFromTable(int index, CustomerData customer) async {
     talker.info('$logTitle::selectDataFromTable:${customer.id}');
     warrantyList.clear();
     try {
@@ -91,17 +93,19 @@ class WarrantyController extends GetxController {
         "offset": offset.value.toString(),
         "limit": queryParamLimit,
         "order": queryParamOrderBy,
-        "customer_phone": customer.telephone!,
-        "customer_license_plate": customer.licensePlate!,
-        "customer_email": customer.email!,
+        // "warranty_no": customer.warrantyNo!,
+        "customer_phone": customer.customerPhone!,
+        "customer_license_plate": customer.customerLicensePlate!,
+        "customer_email": customer.customerEmail!,
       };
       final response = await WarrantyService().list(qParams);
       if (response!.code! == "000") {
         // warrantyList.clear();
         for (final item in response.data!) {
-          talker.info('$logTitle:warrantyNo:${item.warrantyNo}');
+          // talker.info('$logTitle:warrantyNo:${item.warrantyNo}');
           List<ProductList> listProduct = <ProductList>[];
           for (final product in item.products!) {
+            // talker.info('$logTitle:product:${product.toJson()}');
             listProduct.add(ProductList(
               id: product.id,
               productAmount: product.productAmount,
