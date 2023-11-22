@@ -271,7 +271,7 @@ class DealerController extends GetxController {
     try {
       final image = await QrPainter(
         data:
-            '${Api.baseUrlSystemLink}${ApiEndPoints.systemLinkDealers}/${dealerData.id}',
+            '${Api.baseUrlQr}${ApiEndPoints.register}/${dealerData.id}',
         version: QrVersions.auto,
       ).toImage(300);
       final a = await image.toByteData(format: ImageByteFormat.png);
