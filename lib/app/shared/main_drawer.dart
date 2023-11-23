@@ -20,8 +20,7 @@ class MainDrawer extends StatelessWidget {
           children: [
             DrawerHeader(
               child: Center(
-                  child: SvgPicture.network(
-                      'assets/icons/undraw_sweet_home_dkhr.svg')),
+                  child: Image.network('assets/images/ppsuperwheel.png')),
             ),
             Expanded(
               child: ListView.builder(
