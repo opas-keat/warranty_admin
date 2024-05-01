@@ -28,6 +28,9 @@ class ConfigList extends StatelessWidget {
                 ConfigTire(),
                 SizedBox(height: defaultPadding * 2),
                 ConfigCampaign(),
+                SizedBox(height: defaultPadding * 2),
+                ConfigDownload(),
+                SizedBox(height: defaultPadding * 2),
                 // const Row(
                 //   children: [
                 //     Expanded(
@@ -45,6 +48,56 @@ class ConfigList extends StatelessWidget {
           ),
         ),
         const SizedBox(height: defaultPadding / 2),
+      ],
+    );
+  }
+}
+
+class ConfigDownload extends StatelessWidget {
+  const ConfigDownload({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final ConfigController controller = Get.put(ConfigController());
+    return Column(
+      children: [
+        const SizedBox(height: defaultPadding),
+        const Row(
+          children: [
+            Expanded(
+              child: CustomText(
+                text: "Download File",
+                weight: FontWeight.bold,
+                scale: 1.8,
+              ),
+            ),
+          ],
+        ),
+        accentDividerTop,
+        const SizedBox(height: defaultPadding),
+        Row(
+          children: [
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                    vertical: defaultPadding, horizontal: defaultPadding / 2),
+              ),
+              icon: const Icon(
+                Icons.download,
+              ),
+              label: const CustomText(
+                text: "ข้อมูลการรับประกัน",
+                color: Colors.white,
+              ),
+              onPressed: () {
+                controller.downloadExcels();
+              },
+            ),
+          ],
+        ),
+        const SizedBox(height: defaultPadding),
       ],
     );
   }

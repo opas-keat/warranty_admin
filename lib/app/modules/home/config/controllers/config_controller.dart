@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -64,6 +66,18 @@ class ConfigController extends GetxController {
   void onClose() {
     talker.info('$logTitle:onClose:');
     super.onClose();
+  }
+
+  downloadExcels() async {
+    talker.info('$logTitle:downloadExcels:');
+    isLoading.value = true;
+    try {
+      await ConfigService().downloadExcels();
+      isLoading.value = false;
+    } catch (e) {
+      talker.error('$e');
+      return false;
+    }
   }
 
   listConfig() async {
