@@ -43,4 +43,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: opas/ppswwarranty-admin:latest,opas/ppswwarranty-admin:1.0.0
+          tags: opas/ppswwarranty-admin:latest,opas/ppswwarranty-admin:1.0.1
