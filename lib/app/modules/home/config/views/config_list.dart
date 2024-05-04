@@ -68,7 +68,7 @@ class ConfigDownload extends StatelessWidget {
           children: [
             Expanded(
               child: CustomText(
-                text: "Download File",
+                text: "ข้อมูลการลงทะเบียนรับประกัน",
                 weight: FontWeight.bold,
                 scale: 1.8,
               ),
@@ -88,7 +88,7 @@ class ConfigDownload extends StatelessWidget {
                 Icons.download,
               ),
               label: const CustomText(
-                text: "ข้อมูลการรับประกัน",
+                text: "ดาวน์โหลด",
                 color: Colors.white,
               ),
               onPressed: () {
